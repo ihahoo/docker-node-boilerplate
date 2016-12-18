@@ -1,7 +1,7 @@
 {
   "name": "docker-node-boilerplate",
   "version": "0.0.1",
-  "description": "docker下部署node.js应用 ( Babel, ES2015, ESLint... )",
+  "description": "docker下部署node.js应用 ( Babel, ES2015, ESLint, Dockerfile... )",
   "main": "lib/server.js",
   "scripts": {
     "start": "node lib/server.js",
