@@ -1,6 +1,7 @@
 import express from 'express';
+import config from '../config/app/config.json';
 
-const port = 8080;
+const port = config.port;
 const app = express();
 
 app.get('/', (req, res) => {
