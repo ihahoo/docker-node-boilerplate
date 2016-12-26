@@ -4,10 +4,11 @@ ENV appdir /usr/src/app/
 RUN mkdir -p $appdir
 WORKDIR $appdir
 
-COPY package.json .
+ADD package.json .
 RUN npm install --only=production
 
-COPY . .
+ADD ./config/app ./config/app
+ADD ./lib ./lib
 
 EXPOSE 8080
 CMD [ "npm", "start" ]
