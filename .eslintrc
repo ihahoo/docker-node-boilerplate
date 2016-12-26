@@ -1,22 +1,20 @@
 {
    "extends": "airbnb-base",
     "env": {
-        "node": true,
-        "mocha": true
+        "es6": true,
+        "node": true
     },
-    "parser": "babel-eslint",
     "plugins": ["import"],
     "rules": {
         "comma-dangle": ["warn", "only-multiline"],
         "indent": [2, 2, {"SwitchCase": 1}],
         "no-console": 0,
+        "array-bracket-spacing": 1,
         "object-shorthand": [2, "always", { "avoidQuotes": false }],
+        "arrow-parens": 1,
         "max-len": [2, 120],
         "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
         "no-restricted-syntax": 0,
-        "class-methods-use-this": 0,
-    },
-    "globals": {
-      "expect": true
+        "class-methods-use-this": 0
     }
 }
