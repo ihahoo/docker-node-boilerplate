@@ -1,0 +1,31 @@
+version: '2'
+services:
+  web_dev:
+    build:
+      context: .
+      dockerfile: Dockerfile-dev
+    command: pm2-dev start process.dev.json
+    ports:
+      - 8080:8080
+    volumes:
+      - .:/usr/src/app
+    depends_on:
+      - db
+      - redis
+  db:
+    image: postgres:9.6.1-alpine
+    volumes:
+      - ./data/postgresql:/var/lib/postgresql/data/pgdata
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: SgQ6Vhc3u015xOL09se9
+      PGDATA: /var/lib/postgresql/data/pgdata
+  redis:
+    image: redis:3.2.6-alpine
+    volumes:
+      - ./config/redis/redis.conf:/usr/local/etc/redis/redis.conf
+      - ./data/redis:/var/opt/redis
+    ports:
+      - 6379:6379
+    command: redis-server /usr/local/etc/redis/redis.conf
