@@ -1,13 +1,17 @@
 {
   "name": "docker-node-boilerplate",
-  "version": "0.0.1",
-  "description": "docker下部署node.js应用 ( Babel, ES2015, ESLint, Dockerfile... )",
+  "version": "0.1.0",
+  "description": "docker下开发和部署node.js应用基本脚手架 ( Babel, ES6, async/await, ESLint, Dockerfile, docker-compose...  )",
   "main": "lib/server.js",
   "scripts": {
     "start": "node lib/server.js",
-    "build": "npm run clean && cross-env BABEL_ENV=commonjs babel src --out-dir lib && npm run compress",
-    "compress": "gulp compress",
-    "clean": "rimraf lib"
+    "build": "npm run clean && cross-env BABEL_ENV=commonjs BABEL_ENV=production babel src --out-dir lib",
+    "dev": "babel-node src/server.js",
+    "dev:start": "pm2 start process.dev.json",
+    "dev:stop": "pm2 stop process.dev.json",
+    "dev:kill": "pm2 kill",
+    "clean": "rimraf lib",
+    "lint": "eslint src"
   },
   "repository": {
     "type": "git",
@@ -26,16 +30,14 @@
   "devDependencies": {
     "babel-cli": "^6.18.0",
     "babel-core": "^6.21.0",
-    "babel-eslint": "^7.1.1",
-    "babel-preset-es2015": "^6.18.0",
-    "babel-preset-stage-0": "^6.16.0",
+    "babel-plugin-transform-async-to-generator": "^6.16.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.18.0",
+    "babel-plugin-transform-strict-mode": "^6.18.0",
+    "babel-preset-babili": "0.0.9",
     "cross-env": "^3.1.3",
     "eslint": "^3.12.2",
     "eslint-config-airbnb-base": "^11.0.0",
     "eslint-plugin-import": "^2.2.0",
-    "gulp": "^3.9.1",
-    "gulp-uglify": "^2.0.0",
-    "pump": "^1.0.1",
     "rimraf": "^2.5.4"
   },
   "dependencies": {
