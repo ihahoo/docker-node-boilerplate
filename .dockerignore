@@ -1,18 +1,9 @@
-node_modules
-npm-debug.log*
+.DS_Store
+.git
+.gitignore
 .npm
 .module-cache
-.DS_Store
 .idea
 *.iml
 
-src
-.git
-.babelrc
-.editorconfig
-.eslintignore
-.eslintrc
-.gitignore
-gulpfile.js
-README.md
-Dockerfile
+node_modules
