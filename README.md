@@ -142,6 +142,8 @@ $ docker build -t hahoo/node-hello:0.0.1 .
 ```
 这个命令是通过`Dockerfile`建立镜像，使用的是node的alpine版，生成的镜像比较小，生产环境这里不使用pm2。注意，别忘记命令最后的那个`.`点。`-t hahoo/node-hello`的意思，就是给镜像加tag，名称是`hahoo/node-hello`,版本是0.0.1，由于本例子，是发布到Docker官方Hub中，而实际项目一般是上传到私有仓库中。私有仓库，可以通过官方的[registry](https://hub.docker.com/_/registry/)方便的建立。
 
+您可以参考我的 [nginx + docker-gen + letsencrypt 下部署Docker私有仓库registry](https://github.com/ihahoo/docker-server-deploy/tree/master/registry)
+
 比如你的仓库地址是 `registry.domain.com`，那么镜像名称可以是：`registry.domain.com/yourname:0.0.1` 之类的
 
 然后将这个镜像打上latest标签:
@@ -183,6 +185,8 @@ $ docker-compose up
 当然，可以通过负载均衡，启动多个相同服务的容器，不停服务的同时平滑升级，本例中暂没展开。
 
 注意：如果服务器通过nginx反向代理共享80或443端口虚机配置，需要修改`docker-compose.yml`网络设置。由于这3个服务建立了独有的虚拟网络环境，需要配置nginx可以访问到node.js容器的网络，而node.js到数据库的通信只需要在独有的内部网络环境中。
+
+具体Docker的部署，请查看我的 [docker-server-deploy](https://github.com/ihahoo/docker-server-deploy), 在服务器上通过Docker部署nginx自发现，并且可以自动配置和升级letsencrypt https证书等。
 
 应用项目文件夹下有docker-compose.yml文件和数据卷，这里的数据卷是`config/`和`data/`，数据卷也可以放到专门存储数据的地方，比如NAS或者Docker的某个Datecenter之类的。
 
