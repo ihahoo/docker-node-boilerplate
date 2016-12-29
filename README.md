@@ -196,7 +196,7 @@ $ docker-compose up
 - `src/`: 源代码的组织和书写请在这个文件夹下。
 - [eslint](https://github.com/eslint/eslint): 通过`eslint`检查`js es6`的语法错误和一致性习惯，这里用到了[eslint-config-airbnb-base](https://github.com/airbnb/javascript)，也就是用了`airbnb`总结的代码书写习惯，这样对书写代码的一致性有了一个规范，特别是多人开发的时候，如果没有一个规范，那么每个人按照自己的习惯去做，那么代码会很难读懂和维护。可以在代码编辑器中，加入eslint插件，这样在开发的过程中，就可以时实时提示错误。如果对某些eslint规则不爽，可以通过修改`.eslintrc`配置去设置规则。`eslint`的一个好处，就是可以自定义规则。可以通过`npm run lint`来运行代码检查。
 - `.editorconfig`: 请将代码编辑器配置支持[EditConfig](http://editorconfig.org/)的插件。编辑器通过读取这个配置文件之后，会按照一致的方式来书写代码，比如Tab键代表几个空格等，这样在多人开发，不同的开发环境，书写的代码是一致的。可以通过修改`.editorconfig`来进行一致性设置。
-- `.tern-project`: 是本人使用vim编辑器的syntastic插件的js下错误检测配置。如果不用vim可以不用管它或者删除。
+- `.tern-project`: 是本人使用vim编辑器的YouCompleteMe插件的配置文件。如果不用vim可以不用管它或者删除。
 
 ## 自动化及持续集成
 可以使用`gitlab`和`jenkins`配置版本控制和自动化测试，构建和部署。而`gitlab`和`jenkins`同样可以通过docker方便的搭建。
