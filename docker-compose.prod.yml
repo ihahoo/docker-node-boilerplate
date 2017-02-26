@@ -12,7 +12,7 @@ services:
       - db
       - redis
   db:
-    image: postgres:9.6.1-alpine
+    image: postgres:9.6.2-alpine
     restart: always
     volumes:
       - ./data/postgresql:/var/lib/postgresql/data/pgdata
@@ -20,9 +20,9 @@ services:
       POSTGRES_PASSWORD: SgQ6Vhc3u015xOL09se9
       PGDATA: /var/lib/postgresql/data/pgdata
   redis:
-    image: redis:3.2.6-alpine
+    image: redis:3.2.8-alpine
     restart: always
     volumes:
       - ./config/redis/redis.conf:/usr/local/etc/redis/redis.conf
-      - ./data/redis:/var/opt/redis
+      - ./data/redis:/data
     command: redis-server /usr/local/etc/redis/redis.conf
