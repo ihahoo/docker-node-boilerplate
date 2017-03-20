@@ -1,6 +1,6 @@
 {
   "name": "docker-node-boilerplate",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "docker下开发和部署node.js应用基本脚手架 ( Babel, ES6, async/await, ESLint, Dockerfile, docker-compose...  )",
   "main": "lib/server.js",
   "scripts": {
@@ -28,19 +28,19 @@
   },
   "homepage": "https://github.com/ihahoo/docker-node-boilerplate#readme",
   "devDependencies": {
-    "babel-cli": "^6.18.0",
-    "babel-core": "^6.21.0",
-    "babel-plugin-transform-async-to-generator": "^6.16.0",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.18.0",
-    "babel-plugin-transform-strict-mode": "^6.18.0",
-    "babel-preset-babili": "0.0.9",
-    "cross-env": "^3.1.3",
-    "eslint": "^3.12.2",
-    "eslint-config-airbnb-base": "^11.0.0",
+    "babel-cli": "^6.24.0",
+    "babel-core": "^6.24.0",
+    "babel-plugin-transform-async-to-generator": "^6.22.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.0",
+    "babel-plugin-transform-strict-mode": "^6.22.0",
+    "babel-preset-babili": "0.0.12",
+    "cross-env": "^3.2.4",
+    "eslint": "^3.18.0",
+    "eslint-config-airbnb-base": "^11.1.1",
     "eslint-plugin-import": "^2.2.0",
-    "rimraf": "^2.5.4"
+    "rimraf": "^2.6.1"
   },
   "dependencies": {
-    "express": "^4.14.0"
+    "express": "^4.15.2"
   }
 }
